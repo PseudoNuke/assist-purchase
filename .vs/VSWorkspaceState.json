@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\AssistAPurchase",
+    "\\AssistAPurchase\\Controllers",
     "\\AssistAPurchase\\Database",
     "\\AssistAPurchase\\Models",
-    "\\AssistAPurchase\\Repository",
-    "\\AssistAPurchase\\SupportingFunctions"
+    "\\AssistAPurchase\\Properties",
+    "\\AssistAPurchase\\Repository"
   ],
-  "SelectedNode": "\\AssistAPurchase\\Repository\\AlertRepository.cs",
+  "SelectedNode": "\\AssistAPurchase\\AssistAPurchase.csproj",
   "PreviewInSolutionExplorer": false
 }

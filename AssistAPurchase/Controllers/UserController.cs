@@ -16,7 +16,7 @@ namespace AssistAPurchase.Controllers
 
         //POST api/User/login
         [HttpPost("login")]
-        public IActionResult Login([FromBody], UserModel user)
+        public IActionResult Login([FromBody] UserModel user)
         {
             var isSuccessful = Repo.Login(user);
             if (isSuccessful)
@@ -26,7 +26,7 @@ namespace AssistAPurchase.Controllers
 
         //POST api/User/signup
         [HttpPost("signup")]
-        public IActionResult SignUp([FromBody], UserModel user)
+        public IActionResult SignUp([FromBody] UserModel user)
         {
             var isSuccessful = Repo.SignUp(user);
             if (isSuccessful)

@@ -17,14 +17,14 @@ namespace AssistAPurchase.Controllers
         [HttpPost("MonitoringProduct")]
         public ActionResult<IEnumerable<MonitoringItems>> GetValueByCategory([FromBody] MonitoringItems category)
         {
-            return Ok(Products.FilterByCategory(category);
+            return Ok(Products.FilterByCategory(category));
         }
 
         // GET https://localhost:5001/api/RespondToQuestions/MonitoringProductHomePage
         [HttpGet("MonitoringProductHomePage")]
         public ActionResult<IEnumerable<MonitoringItems>> GetAll()
         {
-            var allProducts = Products.GetAllProducts();
+            var allProducts = Products.GetAllProduct();
             return Ok(allProducts);
         }
 

@@ -6,23 +6,24 @@ using AssistAPurchase.Repository;
 using AssistAPurchase.SupportingFunctions;
 
 namespace AssistAPurchase.Controllers
+
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ProductConfigureController : ControllerBase
     {
         private IMonitoringProductRepository Products { get; }
-        public ProductConfigureController(IMonitoringProductRepository products)
+        public ProductConfigureController(IMonitoringProductRepository prodcuts)
         {
-            Products = products;
+            Products = prodcuts;
         }
 
-        // GET api/ProductConfigure/{getAllProducts}
+        // GET api/ProductConfigure/getAllProducts
         [HttpGet("getAllProducts")]
         public ActionResult<IEnumerable<MonitoringItems>> GetAll()
         {
-            var allProducts = Products.GetAll();
-            return Ok(allProducts);
+            var allproducts = Products.GetAll();
+            return Ok(allproducts);
         }
 
         // GET api/ProductConfigure/{productNumber}
@@ -34,6 +35,7 @@ namespace AssistAPurchase.Controllers
             {
                 return NotFound();
             }
+            //return new ObjectResult(product);
             return Ok(product);
         }
 
@@ -41,31 +43,35 @@ namespace AssistAPurchase.Controllers
         [HttpPost("{productNumber}")]
         public IActionResult Create(string productNumber, [FromBody] MonitoringItems product)
         {
-            if (ProductConfigureSupporterFunctions.CheckForNullOrMismatchProductNumber(product, productNumber){
+            if (ProductConfigureSupporterFunctions.CheckForNullOrMismatchProductNumber(product, productNumber))
                 return BadRequest();
-            }
+            /*if (product == null)
+            {
+                return BadRequest();
+            }*/
             Products.Add(product);
             return Ok();
         }
 
-        //PUT api/ProductConfigure/{productNumber}
+        // Put api/ProductConfigure/{productNumber}
         [HttpPut("{productNumber}")]
         public IActionResult Update(string productNumber, [FromBody] MonitoringItems product)
         {
-            if (ProductConfigureSupporterFunctions.CheckForNullOrMismatchProductNumber(product, productNumber){
+            if (ProductConfigureSupporterFunctions.CheckForNullOrMismatchProductNumber(product, productNumber))
                 return BadRequest();
-            }
             var currentProduct = Products.Find(productNumber);
+
             if (currentProduct == null)
             {
                 return NotFound();
             }
             string message = Products.Update(product);
             Console.WriteLine(message);
-            return NoContentResult();
+            return new NoContentResult();
         }
 
-        // DELETE api/ProductConfigure/{productNumber}
+
+        // Delete api/ProductConfigure/{productNumber}
         [HttpDelete("{productNumber}")]
         public ActionResult Delete(string productNumber)
         {

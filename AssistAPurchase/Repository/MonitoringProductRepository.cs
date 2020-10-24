@@ -36,6 +36,7 @@ namespace AssistAPurchase.Repository
                     return item;
                 }
             }
+            return null;
         }
 
         public MonitoringItems Remove(string productNumber)
