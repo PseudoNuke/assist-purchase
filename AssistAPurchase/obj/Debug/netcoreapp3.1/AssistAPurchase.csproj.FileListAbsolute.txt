@@ -1,0 +1,5 @@
+C:\Users\320104254\source\repos\assist-purchase\AssistAPurchase\obj\Debug\netcoreapp3.1\AssistAPurchase.csprojAssemblyReference.cache
+C:\Users\320104254\source\repos\assist-purchase\AssistAPurchase\obj\Debug\netcoreapp3.1\AssistAPurchase.AssemblyInfoInputs.cache
+C:\Users\320104254\source\repos\assist-purchase\AssistAPurchase\obj\Debug\netcoreapp3.1\AssistAPurchase.AssemblyInfo.cs
+C:\Users\320104254\source\repos\assist-purchase\AssistAPurchase\obj\Debug\netcoreapp3.1\AssistAPurchase.csproj.CoreCompileInputs.cache
+C:\Users\320104254\source\repos\assist-purchase\AssistAPurchase\obj\Debug\netcoreapp3.1\AssistAPurchase.MvcApplicationPartsAssemblyInfo.cache

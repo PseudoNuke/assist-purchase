@@ -177,7 +177,7 @@ namespace AssistAPurchase.Repository
 
 
 
-        private List<MonitoringItems> _filterByTouchScreen(string touchScreenValue, List<MonitoringItems> productList)
+         private List<MonitoringItems> _filterByTouchScreen(string touchScreenValue, List<MonitoringItems> productList)
         {
             for (int item = productList.Count - 1; item >= 0; item--)
             {
@@ -336,67 +336,67 @@ namespace AssistAPurchase.Repository
 
         private List<MonitoringItems> _ifBatteryFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value!=null)
                 product = _filterByBatterySupport(value, product);
             return product;
         }
         private List<MonitoringItems> _ifProductSpecficTrainingFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterByProductSpecficTraining(value, product);
             return product;
         }
         private List<MonitoringItems> _ifWearableFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterByWearable(value, product);
             return product;
         }
         private List<MonitoringItems> _ifSoftwareUpdateSupportFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterBySoftwareUpdateSupport(value, product);
             return product;
         }
         private List<MonitoringItems> _ifPortabilityFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterByPortability(value, product);
             return product;
         }
         private List<MonitoringItems> _ifThirdPartyDeviceSupportFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterByThirdPartyDeviceSupport(value, product);
             return product;
         }
         private List<MonitoringItems> _ifSafeToFlyCertificationFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterBySafeToFlyCertification(value, product);
             return product;
         }
         private List<MonitoringItems> _ifMultiPatientSupportFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterByMultiPatientSupport(value, product);
             return product;
         }
         private List<MonitoringItems> _ifCompactFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterByCompact(value, product);
             return product;
         }
         private List<MonitoringItems> _ifTouchScreenFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterByTouchScreen(value, product);
             return product;
         }
         private List<MonitoringItems> _ifCyberSecurityFilter(string value, List<MonitoringItems> product)
         {
-            if (value != null)
+            if (value !=null)
                 product = _filterByCyberSecurity(value, product);
             return product;
         }
@@ -422,21 +422,21 @@ namespace AssistAPurchase.Repository
         {
             var productRepo = new MonitoringProductRepository();
             List<MonitoringItems> product = productRepo.GetAll();
-
-            product = _ifProductSpecficTrainingFilter(category.ProductSpecficTraining, product);
-            product = _ifWearableFilter(category.Wearable, product);
-            product = _ifSoftwareUpdateSupportFilter(category.SoftwareUpdateSupport, product);
-            product = _ifPortabilityFilter(category.Portability, product);
-            product = _ifCompactFilter(category.Compact, product);
-            product = _ifBatteryFilter(category.BatterySupport, product);
-            product = _ifThirdPartyDeviceSupportFilter(category.ThirdPartyDeviceSupport, product);
-            product = _ifSafeToFlyCertificationFilter(category.SafeToFlyCertification, product);
-            product = _ifTouchScreenFilter(category.TouchScreenSupport, product);
-            product = _ifMultiPatientSupportFilter(category.MultiPatientSupport, product);
-            product = _ifCyberSecurityFilter(category.CyberSecurity, product);
-            product = _ifProductNameFilter(category.ProductName, product);
-            product = _ifPriceFilter(category.Price, product);
-            product = _ifScreenSizeFilter(category.ScreenSize, product);
+            
+                product = _ifProductSpecficTrainingFilter(category.ProductSpecficTraining, product);
+                product = _ifWearableFilter(category.Wearable, product);
+                product = _ifSoftwareUpdateSupportFilter(category.SoftwareUpdateSupport, product);
+                product = _ifPortabilityFilter(category.Portability, product);
+                product = _ifCompactFilter(category.Compact, product);
+                product = _ifBatteryFilter(category.BatterySupport, product);
+                product = _ifThirdPartyDeviceSupportFilter(category.ThirdPartyDeviceSupport, product);
+                product = _ifSafeToFlyCertificationFilter(category.SafeToFlyCertification, product);
+                product = _ifTouchScreenFilter(category.TouchScreenSupport, product);
+                product = _ifMultiPatientSupportFilter(category.MultiPatientSupport, product);
+                product = _ifCyberSecurityFilter(category.CyberSecurity, product);
+                product = _ifProductNameFilter(category.ProductName, product);
+                product = _ifPriceFilter(category.Price, product);
+                product = _ifScreenSizeFilter(category.ScreenSize, product);
             return product;
         }
     }

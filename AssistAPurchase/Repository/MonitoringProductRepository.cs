@@ -22,7 +22,7 @@ namespace AssistAPurchase.Repository
             return MonitoringItems;
         }
 
-        public Add(MonitoringItems item)
+        public void Add(MonitoringItems item)
         {
             MonitoringItems.Add(item);
         }
